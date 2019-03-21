@@ -31,6 +31,8 @@ public class SpecialistAsContractorHandler implements InvocationHandler {
                 break;
             case "haveVacancy":
                 return false;
+            case "getName":
+                return specialist.getName();
         }
 
         return null;

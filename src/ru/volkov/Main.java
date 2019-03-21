@@ -26,8 +26,5 @@ public class Main {
         mediator.makeAJob(job);
 
         mediator.shutDown();
-
-        System.out.println(job.getCompetencesDone());
-
     }
 }

@@ -6,6 +6,8 @@ import java.util.HashMap;
 
 public interface JobContractor {
 
+    String getName();
+
     void addCompetence(Competence competence);
 
     HashMap<Competence, Boolean> getCompetences();

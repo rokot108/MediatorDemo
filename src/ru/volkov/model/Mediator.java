@@ -41,12 +41,6 @@ public class Mediator {
 
     synchronized private JobContractor makeTender(Job job) {
         if (contractors.size() != 0) {
-            List<Competence> tenderPositions = new ArrayList<>();
-            for (Competence c : job.getCompetencesDone().keySet()) {
-                if (!job.getCompetencesDone().get(c)) {
-                    tenderPositions.add(c);
-                }
-            }
             int winnerScore = 0;
             JobContractor winner = null;
             for (JobContractor contractor : contractors) {
@@ -56,6 +50,7 @@ public class Mediator {
                         score++;
                     }
                 }
+                System.out.println(contractor.getName() + " score " + score);
                 if (score > winnerScore) {
                     winnerScore = score;
                     winner = contractor;

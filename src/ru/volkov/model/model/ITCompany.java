@@ -20,6 +20,11 @@ public class ITCompany implements JobContractor {
     }
 
     @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
     public boolean haveVacancy(SingleSpecialist specialist) {
         Boolean vacancy = сompetences.get(specialist.getCompetence());
         if (vacancy != null && !vacancy) {
@@ -32,13 +37,13 @@ public class ITCompany implements JobContractor {
     public void hireSpecialist(SingleSpecialist specialist) {
         System.out.println("Company " + name + " hired " + specialist.getName());
         specialists.add(specialist);
-        addCompetence(specialist.getCompetence());
+        сompetences.put(specialist.getCompetence(), true);
     }
 
     @Override
     public void fireSpecialist(SingleSpecialist specialist) {
         if (specialists.remove(specialist)) {
-            this.сompetences.remove(specialist.getCompetence());
+            сompetences.put(specialist.getCompetence(), false);
         }
     }
 

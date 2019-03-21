@@ -12,11 +12,12 @@ public class SingleSpecialist {
         System.out.println("Specialist " + name + " doing " + competence.getName());
 
         try {
-            wait(1_000_000 / skill);
+            wait(100_000 / skill);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         job.getCompetencesDone().put(competence, true);
+        System.out.println("Specialist " + name + " finished task " + competence.getName());
     }
 
     public SingleSpecialist(String name, int skill, Competence competence) {
