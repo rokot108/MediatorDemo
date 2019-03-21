@@ -46,11 +46,10 @@ public class Mediator {
             for (JobContractor contractor : contractors) {
                 int score = 0;
                 for (Competence c : contractor.getCompetences().keySet()) {
-                    if (contractor.getCompetences().get(c) && !job.getCompetencesDone().get(c)) {
+                    if (contractor.getCompetences().get(c) && job.getCompetencesDone().get(c) != null && !job.getCompetencesDone().get(c)) {
                         score++;
                     }
                 }
-                System.out.println(contractor.getName() + " score " + score);
                 if (score > winnerScore) {
                     winnerScore = score;
                     winner = contractor;

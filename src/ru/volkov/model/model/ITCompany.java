@@ -57,19 +57,10 @@ public class ITCompany implements JobContractor {
         return this.сompetences;
     }
 
-    @Override
-    public void signAContract() {
-        try {
-            wait(400);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     public void doTheJob(Job job) {
         System.out.println("Company " + name + " got a new contract");
-        signAContract();
         final int jobSteps = job.getCompetencesDone().size();
         ExecutorService executorService = Executors.newFixedThreadPool(jobSteps);
 

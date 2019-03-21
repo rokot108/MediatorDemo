@@ -12,8 +12,6 @@ public interface JobContractor {
 
     HashMap<Competence, Boolean> getCompetences();
 
-    void signAContract();
-
     void doTheJob(Job job);
 
     boolean haveVacancy(SingleSpecialist specialist);
